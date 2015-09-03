@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="73">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="3" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="0.0" y="-30" width="600" height="600"/>
+                                <constraints>
+                                    <constraint id="12" firstAttribute="width" constant="320"/>
+                                    <constraint id="13" firstAttribute="height" constant="444"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="0.0" y="94" width="320" height="444"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="16" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="570" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Resize Photo">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="ResizePhotoButton_TouchUpInside:" destination="BYZ-38-t0r" id="142" eventType="touchUpInside"/>
+                                </connections>
+                                <constraints>
+                                    <constraint id="28" firstAttribute="width" constant="320"/>
+                                    <constraint id="29" firstAttribute="height" constant="30"/>
+                                </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="0.0" y="538" width="320" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="134" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="137" y="65" width="46" height="30"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="0.0" y="65" width="320" height="36"/>
+                                    <mask key="constraints">
+                                        <include reference="137"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="137" firstAttribute="width" constant="320"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="137"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="SelectPhotoButton_TouchUpInside:" destination="BYZ-38-t0r" id="143" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="14" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="0.0"/>
+                            <constraint id="15" constant="30" firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="3" secondAttribute="bottom"/>
+                            <constraint id="26" constant="0.0" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="16" secondAttribute="trailing"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" constant="0.0" id="30"/>
+                            <constraint id="135" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="134" secondAttribute="trailing" constant="0.0"/>
+                            <constraint id="136" constant="65" firstItem="134" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="134"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="135"/>
+                                <exclude reference="136"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="134"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="135"/>
+                                <include reference="136"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="BaseView" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
+                        <outlet property="ResizePhotoButton" destination="16" id="name-outlet-16"/>
+                        <outlet property="PhotoPreview" destination="3" id="name-outlet-3"/>
+                        <outlet property="SelectPhotoButton" destination="134" id="name-outlet-134"/>
+                    </connections>
+                    <navigationItem id="129" key="navigationItem" title="Resize Your Photos"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="2"/>
+        </scene>
+        <scene sceneID="72">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="73" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="76">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="130" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-27" y="5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="default.jpg" width="900" height="450"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
